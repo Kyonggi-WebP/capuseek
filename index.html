@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CAMPUSEEK</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 70px;
+      background-color: #787878;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .header-left img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .site-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .header-nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px black;
+      transition: all 0.2s;
+    }
+
+    .header-nav a:hover {
+      transform: scale(1.05);
+      text-shadow: 2px 2px 4px black;
+    } 
+
+    main {
+      padding: 80px 20px 20px;
+    }
+
+    section {
+      margin-bottom: 80px;
+      scroll-margin-top: 80px;
+    }
+
+    .location-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .location-list li {
+      background: #ecf0f1;
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <div class="header-left">
+    <img src="img/LogoIcon.png" alt="로고" />
+    <span class="site-title">CAMPUSEEK</span>
+    </div>
+    <nav class="header-nav">
+      <a href="#map">지도</a>
+      <a href="#lecture">강의동</a>
+      <a href="#study">공부 장소</a>
+      <a href="#food">식당</a>
+    </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="map">
+      <h2>지도</h2>
+      <img src="img/campus_map.jpg" alt="캠퍼스 지도" style="max-width: 100%; border-radius: 12px;" />
+      <ul class="location-list">
+        <li>📍1강의동</li>
+        <li>📍2/3강의동</li>
+        <li>📍4강의동</li>
+        <li>📍5강의동</li>
+        <li>📍6강의동</li>
+        <li>📍7/8강의동</li>
+        <li>📍9강의동</li>
+        <li>📍예학관</li>
+        <li>📍종합강의동</li>
+        <li>📍제2공학관</li>
+        <li>📍리서치센터</li>
+        <li>📍공학실습동</li>
+      </ul>
+    </section>
+
+    <section id="lecture">
+      <h2>강의동</h2>
+      <p>(강의동 정보가 여기에 들어갈 예정입니다)</p>
+    </section>
+
+    <section id="study">
+      <h2>공부 장소</h2>
+      <p>(공부 공간 정보가 여기에 들어갈 예정입니다)</p>
+    </section>
+
+    <section id="food">
+      <h2>식당</h2>
+      <p>(식당 정보가 여기에 들어갈 예정입니다)</p>
+    </section>
+  </main>
+
+</body>
+</html>
