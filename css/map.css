@@ -58,12 +58,11 @@
         overflow-y: auto;
         gap: 6px;
         padding: 6px;
-        justify-content: space-evenly;
+        justify-content: flex-start;
       }
 
       #map .location-list li {
-        flex: 1 1 calc(25% - 12px);
-        max-width: 100px;
+        max-width: unset;
         min-width: 70px;
         padding: 4px 6px;
         font-size: 11px;
