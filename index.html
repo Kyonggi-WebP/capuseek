@@ -38,14 +38,15 @@
   <link rel="stylesheet" href="css/map.css">
   <link rel="stylesheet" href="css/lecture.css">
   <!-- Custom JS -->
-  <script src="/js/restaurant-js.js"></script>
+  <script src="js/image-loader.js"></script>
+  <script src="js/restaurant-js.js"></script>
 </head>
 <body>
 
   <header>
     <div class="header-content">
       <div class="header-left">
-    <img src="img/LogoIcon.png" alt="로고" />
+    <img id="logo" alt="로고" />
     <span class="site-title">CAMPUSEEK</span>
     </div>
     <nav class="header-nav">
@@ -62,7 +63,7 @@
       <h2>지도</h2>
       <div class="row">
         <div class="col-md-6">
-          <img src="img/campus_map.jpg" alt="캠퍼스 지도" class="img-fluid rounded" />
+          <img id="campus-map" alt="캠퍼스 지도" class="img-fluid rounded" />
         </div>
         <div class="col-md-6">
           <ul class="location-list">
