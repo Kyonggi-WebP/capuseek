@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,14 +10,14 @@
       margin: 0;
       font-family: Arial, sans-serif;
     }
-    
+
     header {
       position: fixed;
       top: 0;
       width: 100%;
       height: 70px;
       background-color: #787878;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       z-index: 1000;
     }
 
@@ -27,6 +28,121 @@
     section {
       margin-bottom: 80px;
       scroll-margin-top: 80px;
+    }
+
+    .card-container {
+      display: flex;
+      background-color: #c9c9c9;
+      /* 카드 사이에 간격 주기 */
+      gap: 20px;
+      padding: 40px 20px;
+      /* 카드 간 여백 */
+      /* 줄바꿈 없이 한 줄에 표시 */
+      overflow-x: auto;
+      /* 내용이 넘칠 경우 스크롤 */
+      margin: 10px 0;
+
+    }
+
+    .image-card {
+      position: relative;
+      width: 200px;
+      height: 120px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      flex-shrink: 0;
+      /* 크기 유지 */
+    }
+
+    .image-card:hover {
+      transform: scale(1.05);
+
+      /* 5% 확대 */
+      /* 약간 어둡게 */
+      .image-text {
+        text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
+      }
+    }
+
+    .image-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    }
+
+    .card-title {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .card-text {
+      font-size: 1.4rem;
+    }
+
+    .card.mb-3 {
+      border-radius: 12px;
+      max-width: 1200px;
+      border-width: 3px;
+    }
+
+    @media screen and (max-width: 767px) {
+      .card.mb-3 {
+        width: 320px;
+        /* ✅ 고정 가로 크기 */
+        height: 300px;
+        /* ✅ 고정 세로 크기 */
+        margin: 0 auto;
+        /* ✅ 가운데 정렬 */
+        overflow: hidden;
+      }
+
+      .card.mb-3 .row {
+        flex-direction: column;
+        /* ✅ 수직 배치 (텍스트 위, 이미지 아래 또는 반대) */
+      }
+
+      .card.mb-3 .col-md-8,
+      .card.mb-3 .col-md-4 {
+        flex: 0 0 auto;
+        max-width: 100%;
+      }
+
+      .card.mb-3 img {
+        width: 100%;
+        height: 200px;
+        /* ✅ 이미지 고정 높이 */
+        object-fit: cover;
+        border-radius: 10px 10px 0 0;
+      }
+
+      .card.mb-3 .card-body {
+        height: 100px;
+        /* ✅ 텍스트 영역 고정 높이 */
+        padding: 10px;
+        overflow: hidden;
+      }
+
+      .card.mb-3 .card-title {
+        font-size: 20px;
+        margin-bottom: 6px;
+      }
+
+      .card.mb-3 .card-text {
+        font-size: 13px;
+        margin-bottom: 4px;
+      }
+
+      .card.mb-3 .card-text small {
+        font-size: 11px;
+      }
     }
   </style>
   <!-- Bootstrap CSS -->
@@ -41,20 +157,21 @@
   <script src="js/image-loader.js"></script>
   <script src="js/restaurant-js.js"></script>
 </head>
+
 <body>
 
   <header>
     <div class="header-content">
       <div class="header-left">
-    <img id="logo" alt="로고" />
-    <span class="site-title">CAMPUSEEK</span>
-    </div>
-    <nav class="header-nav">
-      <a href="#map">지도</a>
-      <a href="#lecture">강의동</a>
-      <a href="#study">공부 장소</a>
-      <a href="#food">식당</a>
-    </nav>
+        <img id="logo" alt="로고" />
+        <span class="site-title">CAMPUSEEK</span>
+      </div>
+      <nav class="header-nav">
+        <a href="#map">지도</a>
+        <a href="#lecture">강의동</a>
+        <a href="#study">공부 장소</a>
+        <a href="#food">식당</a>
+      </nav>
     </div>
   </header>
 
@@ -113,7 +230,291 @@
 
     <section id="study">
       <h2>공부 장소</h2>
-      <p>(공부 공간 정보가 여기에 들어갈 예정입니다)</p>
+      <div class="card-container">
+        <a href="#stud_lib" class="image-card" style="background-image: url(stud_img/lib.png);">
+          <div class="image-text">중앙도서관</div>
+        </a>
+        <a href="#stud_lec" class="image-card" style="background-image: url(stud_img/lec.png);">
+          <div class="image-text">강의동</div>
+        </a>
+        <a href="#stud_esq" class="image-card" style="background-image: url(stud_img/esq.png);">
+          <div class="image-text">이스퀘어</div>
+        </a>
+        <a href="#stud_stu" class="image-card" style="background-image: url(stud_img/stu.png);">
+          <div class="image-text">학생회관</div>
+        </a>
+        <a href="#stud_dorm" class="image-card" style="background-image: url(stud_img/dorm.png);">
+          <div class="image-text">기숙사</div>
+        </a>
+      </div>
+      <div class="card mb-3" id="stud_lib">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">1F 창의팩토리</h5>
+              <p class="card-text">집중학습공간, 소파 등 다양한 좌석으로 구성되어있는 북카페 스타일의 학습열람실</p>
+              <p class="card-text"><small class="text-body-secondary">#열람실 #휴식</small></p>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex justify-content-end">
+            <img src="stud_img/lib_create.png" class="img-fluid rounded-start" style="border-radius: 10px"
+              alt="도서관_창의팩토리">
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3" id="stud_lib">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">1F 창의토론실</h5>
+              <p class="card-text">음악이 나오며, 조용한 토론과 협업스터디가 가능한 열람실</p>
+              <p class="card-text"><small class="text-body-secondary">#토론 #휴식</small></p>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex justify-content-end">
+            <img src="stud_img/lib_discuss.png" class="img-fluid rounded-start" style="border-radius: 10px"
+              alt="도서관_창의토론실">
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3" id="stud_lib">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">3F 제1열람실</h5>
+              <p class="card-text">스터디카페 컨셉의 오픈형 열람실</p>
+              <p class="card-text"><small class="text-body-secondary">#열람실</small></p>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex justify-content-end">
+            <img src="stud_img/lib_first.png" class="img-fluid rounded-start" style="border-radius: 10px"
+              alt="도서관_제1열람실">
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3" id="stud_lib">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">3F 제2열람실</h5>
+              <p class="card-text">자판기와 복합기가 있는 편의시설이 있으며, 음악이 흐르는 휴게열람실</p>
+              <p class="card-text"><small class="text-body-secondary">#열람실 #휴식</small></p>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex justify-content-end">
+            <img src="stud_img/lib_second.png" class="img-fluid rounded-start" style="border-radius: 10px"
+              alt="도서관_제2열람실">
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3" id="stud_lib">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">4F 제3열람실</h5>
+              <p class="card-text">키보드와 마우스 소음 없이 오로지 공부에만 집중할 수 있는 QUIET 열람실</p>
+              <p class="card-text"><small class="text-body-secondary">#열람실</small></p>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex justify-content-end">
+            <img src="stud_img/lib_third.png" class="img-fluid rounded-start" style="border-radius: 10px"
+              alt="도서관_제3열람실">
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3" id="stud_lec">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">1강 교육관 1F 글로벌라운지 (9:00~15:00)</h5>
+              <p class="card-text">세븐일레븐 옆의 쾌적하고 편안한 휴식을 위한 공간</p>
+              <p class="card-text"><small class="text-body-secondary">#휴식</small></p>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex justify-content-end">
+            <img src="stud_img/lec1_study.png" class="img-fluid rounded-start" style="border-radius: 10px"
+              alt="1강교육관_글로벌라운지">
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3" id="stud_lec">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">2강 1F K마루 (8:00~22:00)</h5>
+              <p class="card-text">학습 공간, 회의실, 휴식공간, PC공간으로 구성</p>
+              <p class="card-text"><small class="text-body-secondary"></small></p>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex justify-content-end">
+            <img src="stud_img/lec2_study.png" class="img-fluid rounded-start" style="border-radius: 10px" alt="2강_K마루">
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3" id="stud_lec">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">4강 B1 로비</h5>
+              <p class="card-text">원형 책상으로 공부 및 간단한 회의가 가능한 공간</p>
+              <p class="card-text"><small class="text-body-secondary">#토론</small></p>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex justify-content-end">
+            <img src="stud_img/lec4_study.jpg" class="img-fluid rounded-start" style="border-radius: 10px"
+              alt="4강_B1_로비">
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3" id="stud_lec">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">6강 1층 로비</h5>
+              <p class="card-text">PC 및 전자기기를 사용가능한 학습공간</p>
+              <p class="card-text"><small class="text-body-secondary"></small></p>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex justify-content-end">
+            <img src="stud_img/lec6_study.jpg" class="img-fluid rounded-start" style="border-radius: 10px"
+              alt="6강_1층_로비">
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3" id="stud_lec">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">7강 4F 로비</h5>
+              <p class="card-text">칸막이 책상으로 도서관 열람실을 재현한 공간</p>
+              <p class="card-text"><small class="text-body-secondary">#열람실</small></p>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex justify-content-end">
+            <img src="stud_img/lec7_study1.png" class="img-fluid rounded-start" style="border-radius: 10px"
+              alt="7강_4F_로비">
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3" id="stud_lec">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">7강 5F 로비</h5>
+              <p class="card-text">원형 칸막이 책상으로 넓은 공부 공간을 제공</p>
+              <p class="card-text"><small class="text-body-secondary">#열람실</small></p>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex justify-content-end">
+            <img src="stud_img/lec7_study2.jpg" class="img-fluid rounded-start" style="border-radius: 10px"
+              alt="7강_5F_로비">
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3" id="stud_lec">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">2공 4,5F 중앙</h5>
+              <p class="card-text">공부 및 간단한 회의가 가능한 공간</p>
+              <p class="card-text"><small class="text-body-secondary">#휴식</small></p>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex justify-content-end">
+            <img src="stud_img/lec10_study.jpg" class="img-fluid rounded-start" style="border-radius: 10px"
+              alt="2공_4,5F_중앙">
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3" id="stud_lec">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">종강 4F 휴게실</h5>
+              <p class="card-text">휴식 및 개인 공부가 가능한 공간</p>
+              <p class="card-text"><small class="text-body-secondary">#휴식</small></p>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex justify-content-end">
+            <img src="stud_img/lec11_study.png" class="img-fluid rounded-start" style="border-radius: 10px"
+              alt="종강_4F_휴게실">
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3" id="stud_esq">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">2F 로비 (09:00~18:00)</h5>
+              <p class="card-text">자유롭게 앉아서 개인공부가 가능한 공간</p>
+              <p class="card-text"><small class="text-body-secondary">#휴식</small></p>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex justify-content-end">
+            <img src="stud_img/esq_2f.png" class="img-fluid rounded-start" style="border-radius: 10px" alt="이스퀘어_2F_로비">
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3" id="stud_esq">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">3F 스터디룸 (09:00~21:00)</h5>
+              <p class="card-text">3인~6인으로 예약신청 후 사용가능한 그룹 스터디 공간</p>
+              <p class="card-text"><small class="text-body-secondary">#토론</small></p>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex justify-content-end">
+            <img src="stud_img/esq_3f.png" class="img-fluid rounded-start" style="border-radius: 10px"
+              alt="이스퀘어_3F_스터디룸">
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3" id="stud_stu">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">1F K-아고라 (7:00~22:00)</h5>
+              <p class="card-text">학습 공간, 회의실, 휴식공간, PC공간으로 구성</p>
+              <p class="card-text"><small class="text-body-secondary">#열람실 #토론</small></p>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex justify-content-end">
+            <img src="stud_img/stu_study.png" class="img-fluid rounded-start" style="border-radius: 10px"
+              alt="학생회관_1F_K-아고라">
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3" id="stud_dorm">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">1F 드림라운지</h5>
+              <p class="card-text">토론 및 휴식이 가능한 공간</p>
+              <p class="card-text"><small class="text-body-secondary">#토론</small></p>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex justify-content-end">
+            <img src="stud_img/dorm_study1.png" class="img-fluid rounded-start" style="border-radius: 10px"
+              alt="기숙사_1F_드림라운지">
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3" id="stud_dorm">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">1F 드림스터디</h5>
+              <p class="card-text">칸막이 책상으로 도서관 열람실을 재현한 공간</p>
+              <p class="card-text"><small class="text-body-secondary">#열람실</small></p>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex justify-content-end">
+            <img src="stud_img/dorm_study2.png" class="img-fluid rounded-start" style="border-radius: 10px"
+              alt="기숙사_1F_드림스터디">
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="food">
@@ -132,7 +533,9 @@
       <div id="kyungsulCards" class="row g-4 d-none">
         <div class="col-md-4">
           <div class="card h-100" onclick="showMenu('ssyongssyong')">
-            <img src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/ssyongssyong.jpg" class="card-img-top" alt="쑝쑝돈까스 이미지">
+            <img
+              src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/ssyongssyong.jpg"
+              class="card-img-top" alt="쑝쑝돈까스 이미지">
             <div class="card-body">
               <h5 class="card-title">쑝쑝돈까스</h5>
               <p class="card-text">바삭한 돈까스와 특제 소스의 환상 조합!</p>
@@ -142,7 +545,9 @@
 
         <div class="col-md-4">
           <div class="card h-100" onclick="showMenu('xinmeoi')">
-            <img src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/xinmeoi.jpg" class="card-img-top" alt="신머이쌀국수 이미지">
+            <img
+              src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/xinmeoi.jpg"
+              class="card-img-top" alt="신머이쌀국수 이미지">
             <div class="card-body">
               <h5 class="card-title">신머이쌀국수</h5>
               <p class="card-text">진한 국물의 베트남식 쌀국수 전문점.</p>
@@ -152,7 +557,9 @@
 
         <div class="col-md-4">
           <div class="card h-100" onclick="showMenu('mangweonhwabab')">
-            <img src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/mangweonhwabab.jpg" class="card-img-top" alt="만권화밥 이미지">
+            <img
+              src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/mangweonhwabab.jpg"
+              class="card-img-top" alt="만권화밥 이미지">
             <div class="card-body">
               <h5 class="card-title">만권화밥</h5>
               <p class="card-text">다양한 중화요리를 푸짐하게 즐길 수 있는 맛집.</p>
@@ -162,7 +569,9 @@
 
         <div class="col-md-4">
           <div class="card h-100" onclick="showMenu('widelga')">
-            <img src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/widelga.jpg" class="card-img-top" alt="위델가 이미지">
+            <img
+              src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/widelga.jpg"
+              class="card-img-top" alt="위델가 이미지">
             <div class="card-body">
               <h5 class="card-title">위델가</h5>
               <p class="card-text">든든한 한식 백반을 맛볼 수 있는 인기 식당.</p>
@@ -172,7 +581,9 @@
 
         <div class="col-md-4">
           <div class="card h-100" onclick="showMenu('burgertaco')">
-            <img src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/burgertaco.jpg" class="card-img-top" alt="버거&타코 이미지">
+            <img
+              src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/burgertaco.jpg"
+              class="card-img-top" alt="버거&타코 이미지">
             <div class="card-body">
               <h5 class="card-title">버거&타코</h5>
               <p class="card-text">미국식 버거와 멕시칸 타코가 함께 있는 이색 공간.</p>
@@ -182,7 +593,9 @@
 
         <div class="col-md-4">
           <div class="card h-100" onclick="showMenu('cafeing')">
-            <img src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/cafeing.jpg" class="card-img-top" alt="카페잉 이미지">
+            <img
+              src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/cafeing.jpg"
+              class="card-img-top" alt="카페잉 이미지">
             <div class="card-body">
               <h5 class="card-title">카페잉</h5>
               <p class="card-text">디저트와 음료가 인기인 아늑한 분위기의 카페.</p>
@@ -247,4 +660,5 @@
 
   </main>
 </body>
+
 </html>
