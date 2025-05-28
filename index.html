@@ -143,14 +143,20 @@
 
       <!-- 버튼 목록 -->
       <div class="mb-4">
-        <button class="btn btn-outline-primary me-2" onclick="showRestaurant('kyungsul')">경슐랭</button>
-        <button class="btn btn-outline-success me-2" onclick="showMenu('eSquare')">E스퀘어</button>
-        <button class="btn btn-outline-warning me-2" onclick="showMenu('gamsung')">감성코어</button>
-        <button class="btn btn-outline-danger" onclick="showMenu('bluepot')">7강카페</button>
+        <button class="btn btn-outline-primary me-2">경슐랭</button>
+        <button class="btn btn-outline-success me-2">E스퀘어</button>
+        <button class="btn btn-outline-warning me-2">감성코어</button>
+        <button class="btn btn-outline-danger">7강카페</button>
       </div>
 
       <!-- 경슐랭 카드 -->
       <h4 class="mt-5 mb-3">🍽️ 경슐랭</h4>
+      <table class="table table-sm table-bordered w-auto mb-3">
+        <tbody>
+          <tr><th scope="row">운영시간</th><td>주말 및 공휴일 휴무 10:30~19:00(주문마감 18:30)</td></tr>
+          <tr><th scope="row">위치</th><td>제1복지관 지하1층, 신학생회관 4층으로 연결된 곳</td></tr>
+        </tbody>
+      </table>
       <div id="kyungsulCards" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
         <div class="col-md-4">
           <div class="card h-100">
@@ -177,7 +183,7 @@
             <img src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/mangweonhwabab.jpg" class="card-img-top" alt="만권화밥 이미지">
             <div class="card-body">
               <h5 class="card-title">만권화밥</h5>
-              <p class="card-text">다양한 중화요리를 푸짐하게 즐길 수 있는 맛집.</p>
+              <p class="card-text">다양한 덮밥요리를 즐길 수 있는 밥집.</p>
             </div>
           </div>
         </div>
@@ -187,7 +193,7 @@
             <img src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/widelga.jpg" class="card-img-top" alt="위델가 이미지">
             <div class="card-body">
               <h5 class="card-title">위델가</h5>
-              <p class="card-text">든든한 한식 백반을 맛볼 수 있는 인기 식당.</p>
+              <p class="card-text">든든한 한식 백반을 맛볼 수 있는 식당.</p>
             </div>
           </div>
         </div>
@@ -207,7 +213,7 @@
             <img src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/cafeing.jpg" class="card-img-top" alt="카페잉 이미지">
             <div class="card-body">
               <h5 class="card-title">카페잉</h5>
-              <p class="card-text">디저트와 음료가 인기인 아늑한 분위기의 카페.</p>
+              <p class="card-text">와플과 음료가 인기인 카페.</p>
             </div>
           </div>
         </div>
@@ -215,20 +221,65 @@
 
       <!-- E스퀘어 카드 -->
       <h4 class="mt-5 mb-3">🍱 E스퀘어</h4>
+      <table class="table table-sm table-bordered w-auto mb-3">
+        <tbody>
+          <tr><th scope="row">운영시간</th><td>07:30~20:30(주문마감 19:30)</td></tr>
+          <tr><th scope="row">위치</th><td>제2복지관(E-스퀘어) 1층</td></tr>
+        </tbody>
+      </table>
       <div id="esquareCards" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
         <!-- 기존 카드들 유지 -->
+         <div class="col-md-4">
+          <div class="card h-100">
+            <img src="https://www.kyonggi.ac.kr/site/www/images/contents/www_key5754_img05.png" class="card-img-top" alt="버거&타코 이미지">
+            <div class="card-body">
+              <h5 class="card-title">E스퀘어</h5>
+              <p class="card-text">떡볶이, 라면, 김밥 등 파는 분식집.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- 감성코어 카드 -->
       <h4 class="mt-5 mb-3">🎵 감성코어</h4>
+      <table class="table table-sm table-bordered w-auto mb-3">
+        <tbody>
+          <tr><th scope="row">운영시간</th><td>주말 및 공휴일 휴무 10:30~16:00(한식 11:00~14:30, 돈까스/라면 10:30~16:00)</td></tr>
+          <tr><th scope="row">위치</th><td>제3복지관(감성코어) 1층, 중앙도서관 뒷편</td></tr>
+        </tbody>
+      </table>
       <div id="gamsungCards" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
         <!-- 카드들 추가 예정 -->
+         <div class="col-md-4">
+          <div class="card h-100">
+            <img src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/gamsung/gamsung.jpg" class="card-img-top" alt="버거&타코 이미지">
+            <div class="card-body">
+              <h5 class="card-title">감성코어</h5>
+              <p class="card-text">든든한 한끼를 먹고 싶다면 여기 한식.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- 7강카페 카드 -->
       <h4 class="mt-5 mb-3">☕ 7강카페</h4>
+      <table class="table table-sm table-bordered w-auto mb-3">
+        <tbody>
+          <tr><th scope="row">운영시간</th><td>주말 및 공휴일 휴무 (학기중: 08:00~18:30/ 방학중: 08:00~17:00)</td></tr>
+          <tr><th scope="row">위치</th><td>7강의동 1층</td></tr>
+        </tbody>
+      </table>
       <div id="sevenCards" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
         <!-- 카드들 추가 예정 -->
+         <div class="col-md-4">
+          <div class="card h-100">
+            <img src="https://www.kyonggi.ac.kr/site/www/images/contents/www_key5754_img09.png" class="card-img-top" alt="버거&타코 이미지">
+            <div class="card-body">
+              <h5 class="card-title">BLUEPOT</h5>
+              <p class="card-text">6,7,8강의동에 수업있을떄, 후다닥 가는 카페</p>
+            </div>
+          </div>
+        </div>
       </div>
 
     </section>
