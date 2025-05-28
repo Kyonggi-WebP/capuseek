@@ -138,6 +138,7 @@
     </section>
 
     <section id="food">
+
       <h2>식당</h2>
 
       <!-- 버튼 목록 -->
@@ -148,11 +149,11 @@
         <button class="btn btn-outline-danger" onclick="showMenu('bluepot')">7강카페</button>
       </div>
 
-
-      <!-- 경슐랭 음식점 카드 -->
-      <div id="kyungsulCards" class="row g-4 d-none">
+      <!-- 경슐랭 카드 -->
+      <h4 class="mt-5 mb-3">🍽️ 경슐랭</h4>
+      <div id="kyungsulCards" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
         <div class="col-md-4">
-          <div class="card h-100" onclick="showMenu('ssyongssyong')">
+          <div class="card h-100">
             <img src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/ssyongssyong.jpg" class="card-img-top" alt="쑝쑝돈까스 이미지">
             <div class="card-body">
               <h5 class="card-title">쑝쑝돈까스</h5>
@@ -162,7 +163,7 @@
         </div>
 
         <div class="col-md-4">
-          <div class="card h-100" onclick="showMenu('xinmeoi')">
+          <div class="card h-100">
             <img src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/xinmeoi.jpg" class="card-img-top" alt="신머이쌀국수 이미지">
             <div class="card-body">
               <h5 class="card-title">신머이쌀국수</h5>
@@ -172,7 +173,7 @@
         </div>
 
         <div class="col-md-4">
-          <div class="card h-100" onclick="showMenu('mangweonhwabab')">
+          <div class="card h-100">
             <img src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/mangweonhwabab.jpg" class="card-img-top" alt="만권화밥 이미지">
             <div class="card-body">
               <h5 class="card-title">만권화밥</h5>
@@ -182,7 +183,7 @@
         </div>
 
         <div class="col-md-4">
-          <div class="card h-100" onclick="showMenu('widelga')">
+          <div class="card h-100">
             <img src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/widelga.jpg" class="card-img-top" alt="위델가 이미지">
             <div class="card-body">
               <h5 class="card-title">위델가</h5>
@@ -192,7 +193,7 @@
         </div>
 
         <div class="col-md-4">
-          <div class="card h-100" onclick="showMenu('burgertaco')">
+          <div class="card h-100">
             <img src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/burgertaco.jpg" class="card-img-top" alt="버거&타코 이미지">
             <div class="card-body">
               <h5 class="card-title">버거&타코</h5>
@@ -202,7 +203,7 @@
         </div>
 
         <div class="col-md-4">
-          <div class="card h-100" onclick="showMenu('cafeing')">
+          <div class="card h-100">
             <img src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/cafeing.jpg" class="card-img-top" alt="카페잉 이미지">
             <div class="card-body">
               <h5 class="card-title">카페잉</h5>
@@ -211,57 +212,23 @@
           </div>
         </div>
       </div>
+
       <!-- E스퀘어 카드 -->
-      <div id="esquareCards" class="row g-4 d-none">
-        <div class="col-md-4">
-          <div class="card h-100">
-            <img src="restaurant/esq1.jpg" class="card-img-top" alt="에스퀘어 식당1">
-            <div class="card-body">
-              <h5 class="card-title">에스퀘어 김밥</h5>
-              <p class="card-text">간편하게 즐기는 김밥 한줄</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100">
-            <img src="restaurant/esq2.jpg" class="card-img-top" alt="에스퀘어 식당2">
-            <div class="card-body">
-              <h5 class="card-title">돈부리 덮밥</h5>
-              <p class="card-text">든든한 한 그릇</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100">
-            <img src="restaurant/esq3.jpg" class="card-img-top" alt="에스퀘어 식당3">
-            <div class="card-body">
-              <h5 class="card-title">컵밥 코너</h5>
-              <p class="card-text">빠르고 맛있는 한끼</p>
-            </div>
-          </div>
-        </div>
+      <h4 class="mt-5 mb-3">🍱 E스퀘어</h4>
+      <div id="esquareCards" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+        <!-- 기존 카드들 유지 -->
       </div>
 
       <!-- 감성코어 카드 -->
-      <div id="gamsungCards" class="row g-4 d-none">
-        <!-- 3개의 카드 동일한 구조로 추가 -->
+      <h4 class="mt-5 mb-3">🎵 감성코어</h4>
+      <div id="gamsungCards" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+        <!-- 카드들 추가 예정 -->
       </div>
 
       <!-- 7강카페 카드 -->
-      <div id="sevenCards" class="row g-4 d-none">
-
-      </div>
-      <div id="menuView" class="d-none">
-        <button class="btn btn-secondary mb-3 d-md-none" onclick="goBack()">← 이전</button>
-
-        <!-- ▶ 운영정보 영역 추가 -->
-        <div class="mb-4">
-          <h4 id="menuTitle" class="fw-bold"></h4>
-          <p id="menuDescription" class="text-muted"></p>
-        </div>
-
-        <!-- ▶ 메뉴 카드 영역 -->
-        <div class="row row-cols-1 row-cols-md-2 g-3" id="menuCards"></div>
+      <h4 class="mt-5 mb-3">☕ 7강카페</h4>
+      <div id="sevenCards" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+        <!-- 카드들 추가 예정 -->
       </div>
 
     </section>
