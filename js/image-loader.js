@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { id: "campus-map", file: "campus_map.jpg"},
         { id: "kyungsyul", file: "kyungsyul.png" },
         { id: "gamsung", file: "gamsung.jpg" },
+        { id: "esquare", file: "esquare.png" }
 
     ];
 
