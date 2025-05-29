@@ -1,115 +1,159 @@
+
 .card-container {
-    display: flex;
-    background-color: #c9c9c9;
-    /* 카드 사이에 간격 주기 */
-    gap: 20px;
-    padding: 40px 20px;
-    /* 카드 간 여백 */
-    /* 줄바꿈 없이 한 줄에 표시 */
-    overflow-x: auto;
-    /* 내용이 넘칠 경우 스크롤 */
-    margin: 10px 0;
+  display: flex;
+  background-color: #c9c9c9;
+
+  gap: 20px;
+  padding: 40px 20px;
+  
+  overflow-x: auto;
+  margin: 10px 0;
 
 }
-
 .image-card {
-    position: relative;
-    width: 200px;
-    height: 120px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    flex-shrink: 0;
-    /* 크기 유지 */
+  position: relative;
+  width: 200px;
+  height: 120px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
 }
 
 .image-card:hover {
-    transform: scale(1.05);
-
-    /* 5% 확대 */
-    /* 약간 어둡게 */
-    .image-text {
-        text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
-    }
+  transform: scale(1.05);
+  .image-text {
+    text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
+  }
 }
 
 .image-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 }
 
 .card-title {
-    font-size: 2rem;
-    font-weight: bold;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .card-text {
-    font-size: 1.4rem;
+  font-size: 1.4rem;
 }
 
 .card.mb-3 {
-    border-radius: 12px;
-    max-width: 1200px;
-    border-width: 3px;
+  border-radius: 12px;
+  max-width: 1200px;
+  border-width: 3px;
 }
 
 @media screen and (max-width: 767px) {
   .card.mb-3 {
     width: 320px;
-    margin: 0 auto 1rem auto;
+    /* ✅ 고정 가로 크기 */
+    height: 300px;
+    /* ✅ 고정 세로 크기 */
+    margin: 0 auto;
+    /* ✅ 가운데 정렬 */
     overflow: hidden;
-    padding: 10px;
   }
 
   .card.mb-3 .row {
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction: column;
+    /* ✅ 수직 배치 (텍스트 위, 이미지 아래 또는 반대) */
   }
 
   .card.mb-3 .col-md-8,
-  .card.mb-3 .col-md-3 {
+  .card.mb-3 .col-md-4 {
     flex: 0 0 auto;
-    max-width: none;
-    width: auto;
+    max-width: 100%;
+  }
+
+  .card.mb-3 img {
+    width: 100%;
+    height: 200px;
+    /* ✅ 이미지 고정 높이 */
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
   }
 
   .card.mb-3 .card-body {
-    padding: 0;
+    height: 100px;
+    /* ✅ 텍스트 영역 고정 높이 */
+    padding: 10px;
+    overflow: hidden;
   }
 
   .card.mb-3 .card-title {
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 6px;
   }
 
   .card.mb-3 .card-text {
-    font-size: 12px;
+    font-size: 13px;
     margin-bottom: 4px;
   }
 
   .card.mb-3 .card-text small {
-    font-size: 10px;
+    font-size: 11px;
+  }
+  .row.g-0.flex-column.flex-md-row {
+    flex-direction: column !important;
   }
 
-  .card.mb-3 img {
-    width: 90px;
-    height: 90px;
-    object-fit: cover;
-    margin-left: 5px;
-    border-radius: 10px;
+  .img-wrapper {
+    width: 100%;
+    justify-content: center !important;
+    margin-top: 15px;
   }
 
-  .card.mb-3 .img-wrapper {
+  .img-wrapper img {
+    max-width: 100%;
+    height: auto;
+  }
+  /* 카드 전체 설정 */
+  .responsive-card {
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    overflow: visible;
+  }
+
+  /* 카드 내용 영역 */
+  .responsive-body {
+    height: auto !important;
+    padding: 10px;
+    overflow: visible;
+  }
+
+  /* 이미지 wrapper 설정 */
+  .responsive-image-wrapper {
     display: flex;
-    align-items: flex-start;
-    padding-top: 2px;
+    justify-content: center !important;
+    align-items: center;
+    margin-top: 15px;
+    width: 100%;
   }
+
+  /* 이미지 자체 설정 */
+  .responsive-image {
+    display: none;
+  }
+
+  /* 목록 글자 스타일 */
+  .responsive-list .list-group-item {
+    word-break: keep-all;
+    white-space: normal;
+    font-size: 14px;
+  }
+
 }
+
