@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const imageList = [
         { id: "logo", file: "LogoIcon.png" },
         { id: "campus-map", file: "campus_map.jpg"},
+        { id: "kyungsyul", file: "kyungsyul.png" },
+        { id: "gamsung", file: "gamsung.jpg" },
+
     ];
 
     imageList.forEach(img => {
