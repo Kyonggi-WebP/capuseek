@@ -38,6 +38,7 @@
   <link rel="stylesheet" href="css/map.css">
   <link rel="stylesheet" href="css/lecture.css">
   <!-- Custom JS -->
+   <script src="js/buildingList.js"></script>
   <script src="js/image-loader.js"></script>
   <script src="js/restaurant-js.js"></script>
 </head>
@@ -106,9 +107,11 @@
       </div>
     </section>
 
-    <section id="lecture">
+    <section id="lecture" class="container">
       <h2>강의동</h2>
-      <p>(강의동 정보가 여기에 들어갈 예정입니다)</p>
+      <div class="row gy-4" id="lecture-list">
+
+      </div>
     </section>
 
     <section id="study">
@@ -118,130 +121,6 @@
 
     <section id="food">
       <h2>식당</h2>
-
-      <!-- 버튼 목록 -->
-      <div class="mb-4">
-        <button class="btn btn-outline-primary me-2" onclick="showRestaurant('kyungsul')">경슐랭</button>
-        <button class="btn btn-outline-success me-2" onclick="showMenu('eSquare')">E스퀘어</button>
-        <button class="btn btn-outline-warning me-2" onclick="showMenu('gamsung')">감성코어</button>
-        <button class="btn btn-outline-danger" onclick="showMenu('bluepot')">7강카페</button>
-      </div>
-
-
-      <!-- 경슐랭 음식점 카드 -->
-      <div id="kyungsulCards" class="row g-4 d-none">
-        <div class="col-md-4">
-          <div class="card h-100" onclick="showMenu('ssyongssyong')">
-            <img src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/ssyongssyong.jpg" class="card-img-top" alt="쑝쑝돈까스 이미지">
-            <div class="card-body">
-              <h5 class="card-title">쑝쑝돈까스</h5>
-              <p class="card-text">바삭한 돈까스와 특제 소스의 환상 조합!</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card h-100" onclick="showMenu('xinmeoi')">
-            <img src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/xinmeoi.jpg" class="card-img-top" alt="신머이쌀국수 이미지">
-            <div class="card-body">
-              <h5 class="card-title">신머이쌀국수</h5>
-              <p class="card-text">진한 국물의 베트남식 쌀국수 전문점.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card h-100" onclick="showMenu('mangweonhwabab')">
-            <img src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/mangweonhwabab.jpg" class="card-img-top" alt="만권화밥 이미지">
-            <div class="card-body">
-              <h5 class="card-title">만권화밥</h5>
-              <p class="card-text">다양한 중화요리를 푸짐하게 즐길 수 있는 맛집.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card h-100" onclick="showMenu('widelga')">
-            <img src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/widelga.jpg" class="card-img-top" alt="위델가 이미지">
-            <div class="card-body">
-              <h5 class="card-title">위델가</h5>
-              <p class="card-text">든든한 한식 백반을 맛볼 수 있는 인기 식당.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card h-100" onclick="showMenu('burgertaco')">
-            <img src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/burgertaco.jpg" class="card-img-top" alt="버거&타코 이미지">
-            <div class="card-body">
-              <h5 class="card-title">버거&타코</h5>
-              <p class="card-text">미국식 버거와 멕시칸 타코가 함께 있는 이색 공간.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card h-100" onclick="showMenu('cafeing')">
-            <img src="https://raw.githubusercontent.com/MCJE-HYEOK/WebProgrammingTest/refs/heads/main/images/restaurant/kyungSyul/cafeing.jpg" class="card-img-top" alt="카페잉 이미지">
-            <div class="card-body">
-              <h5 class="card-title">카페잉</h5>
-              <p class="card-text">디저트와 음료가 인기인 아늑한 분위기의 카페.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- E스퀘어 카드 -->
-      <div id="esquareCards" class="row g-4 d-none">
-        <div class="col-md-4">
-          <div class="card h-100">
-            <img src="restaurant/esq1.jpg" class="card-img-top" alt="에스퀘어 식당1">
-            <div class="card-body">
-              <h5 class="card-title">에스퀘어 김밥</h5>
-              <p class="card-text">간편하게 즐기는 김밥 한줄</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100">
-            <img src="restaurant/esq2.jpg" class="card-img-top" alt="에스퀘어 식당2">
-            <div class="card-body">
-              <h5 class="card-title">돈부리 덮밥</h5>
-              <p class="card-text">든든한 한 그릇</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100">
-            <img src="restaurant/esq3.jpg" class="card-img-top" alt="에스퀘어 식당3">
-            <div class="card-body">
-              <h5 class="card-title">컵밥 코너</h5>
-              <p class="card-text">빠르고 맛있는 한끼</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 감성코어 카드 -->
-      <div id="gamsungCards" class="row g-4 d-none">
-        <!-- 3개의 카드 동일한 구조로 추가 -->
-      </div>
-
-      <!-- 7강카페 카드 -->
-      <div id="sevenCards" class="row g-4 d-none">
-
-      </div>
-      <div id="menuView" class="d-none">
-        <button class="btn btn-secondary mb-3 d-md-none" onclick="goBack()">← 이전</button>
-
-        <!-- ▶ 운영정보 영역 추가 -->
-        <div class="mb-4">
-          <h4 id="menuTitle" class="fw-bold"></h4>
-          <p id="menuDescription" class="text-muted"></p>
-        </div>
-
-        <!-- ▶ 메뉴 카드 영역 -->
-        <div class="row row-cols-1 row-cols-md-2 g-3" id="menuCards"></div>
-      </div>
 
     </section>
 
