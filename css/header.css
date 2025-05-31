@@ -1,0 +1,74 @@
+    .header-content {
+      max-width: 1200px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .header-left img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .site-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .header-nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px black;
+      transition: all 0.2s;
+    }
+
+    .header-nav a:hover {
+      color: white;
+      transform: scale(1.05);
+      text-shadow: 2px 2px 4px black;
+    }
+
+    .menu-toggle {
+      font-size: 24px;
+      background: none;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .header-nav {
+        flex-direction: column;
+        background-color: #787878;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        display: none;
+      }
+
+      .header-nav.show {
+        display: flex !important;
+      }
+
+      .header-nav a {
+        padding: 15px;
+        border-top: 1px solid #aaa;
+      }
+
+      .header-nav a:hover {
+        color: white;
+        /* 마우스 올려도 흰색 유지 */
+        background-color: #5f5f5f;
+        /* 선택적으로 배경색 변경 */
+      }
+    }
