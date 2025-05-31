@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+function loadImages() {
     const baseURL = "https://raw.githubusercontent.com/Kyonggi-WebP/capuseek/img/";
 
     const imageList = [
@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { id: "campus-map", file: "campus_map.jpg"},
         { id: "JinRi", file: "B1-JinRi.jpg" },
         { id: "MiRae", file: "B2-future.jpg" },
+        { id: "Cook", file: "dummy.png" },
         { id: "SeongSin", file: "B4-SeongSin.jpg" },
         { id: "AeGyeong", file: "B5-AeGyeong.jpg" },
         { id: "Gym", file: "B6-Gym.jpg" },
@@ -30,9 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
         { id: "Telecon", file: "B25-Telecon.jpg" },
         { id: "Hoyun", file: "B26-Hoyun.jpg" },
         { id: "Sculpture", file: "B27-Sculpture.jpg" },
+        { id: "Wood", file: "dummy.png" }, 
         { id: "Hongbo", file: "B29-Hongbo.jpg" },
         { id: "Gisooksa", file: "B30-Gisooksa.jpg" },
         { id: "Hanoori", file: "B31-Hanoori.jpg" },
+        { id: "MainGate", file: "dummy.png" },
+        { id: "SubGate", file: "dummy.png" },
         { id: "seminar", file: "B34-seminar.jpg" },
         { id: "kyungsyul", file: "kyungsyul.png" },
         { id: "gamsung", file: "gamsung.jpg" },
@@ -45,4 +49,4 @@ document.addEventListener("DOMContentLoaded", () => {
             element.src = baseURL + img.file;
         }
     });
-})
+}

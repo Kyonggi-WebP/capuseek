@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+
 
     const BuildingList = [
         {
@@ -12,6 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "미래관",
             description: "진리관과 이어진 건물입니다. 국제/평생교육원 수업이 진행되는 곳이기도 하며, 1층에 편의점이 있습니다.",
             tags: ["미래관"]
+        },
+        {
+            id: "Cook",
+            name: "조리실습동",
+            description: "해당 장소에 대한 정보가 없습니다.",
+            tags: ["실습동", "조리실습동"]
         },
         {
             id: "SeongSin",
@@ -158,6 +164,12 @@ document.addEventListener("DOMContentLoaded", () => {
             tags: ["실습동", "조각실습동"]
         },
         {
+            id: "Wood",
+            name: "돔식장작가마동",
+            description: "해당 장소에 대한 정보가 없습니다.",
+            tags: ["돔식장작가마동"]
+        },
+        {
             id: "Hongbo",
             name: "홍보관",
             description: "정문을 통과하면 좌측에 바로 보이는 건물입니다. 1층에는 오아시스 마켓이라는 푸드코트가 있습니다. 국제교류팀과 대외협력팀이 위치해있습니다.",
@@ -176,28 +188,21 @@ document.addEventListener("DOMContentLoaded", () => {
             tags: ["기숙사", "한우리관"]
         },
         {
+            id: "MainGate",
+            name: "정문",
+            description: "캠퍼스의 정문입니다.",
+            tags: ["정문"]
+        },
+        {
+            id: "SubGate",
+            name: "후문",
+            description: "캠퍼스의 후문입니다.",
+            tags: ["후문"]
+        },
+        {
             id: "seminar",
             name: "중앙세미나실",
             description: "중앙도서관 바로 옆에 있습니다. 약 300석 규모의 강의실이 있는 독립 건물로, 세미나나 소규모 공연, 일부 수업이 진행되기도 합니다.",
             tags: ["중앙세미나실"]
-        },
-    ];
-    const buildingElement = document.getElementById("lecture-list");
-
-    BuildingList.forEach(building => {
-        const tagsHTML = building.tags.map(tag => `<span class="badge bg-secondary">${tag}</span>`).join(" ");
-        buildingElement.innerHTML += `
-    <div class="col-md-3 col-lg-3">
-      <div class="card lecture-card h-100">
-        <img id="${building.id}" alt="${building.name}" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">${building.name}</h5>
-          <p class="card-text">${building.description}</p>
-          <div class="tags">${tagsHTML}</div>
-        </div>
-      </div>
-    </div>
-  `;
-    });
-
-})
+        }
+    ]
