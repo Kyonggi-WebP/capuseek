@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,14 +10,14 @@
       margin: 0;
       font-family: Arial, sans-serif;
     }
-    
+
     header {
       position: fixed;
       top: 0;
       width: 100%;
       height: 70px;
       background-color: #787878;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       z-index: 1000;
     }
 
@@ -37,26 +38,53 @@
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/map.css">
   <link rel="stylesheet" href="css/lecture.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/study.css">
   <link rel="stylesheet" href="css/food.css">
   <!-- Custom JS -->
    <script src="js/buildingList.js"></script>
   <script src="js/image-loader.js"></script>
   <script src="js/restaurant-js.js"></script>
+  <script src="js/study.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // header 메뉴 반응형 적용
+      const menuToggle = document.getElementById('menuToggle');
+      const navLinks = document.querySelectorAll('.header-nav a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          // 모바일에서만 접히도록 처리
+          if (window.innerWidth <= 768) {
+            mainNav.classList.remove('show');
+          }
+        });
+      });
+      const mainNav = document.getElementById('mainNav');
+      menuToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('show');
+      });
+    });
+  </script>
+
 </head>
+
 <body>
 
   <header>
-    <div class="header-content">
-      <div class="header-left">
-    <img id="logo" alt="로고" />
-    <span class="site-title">CAMPUSEEK</span>
-    </div>
-    <nav class="header-nav">
-      <a href="#map">지도</a>
-      <a href="#lecture">강의동</a>
-      <a href="#study">공부 장소</a>
-      <a href="#food">식당</a>
-    </nav>
+    <div class="header-content d-flex justify-content-between align-items-center px-3">
+      <div class="header-left d-flex align-items-center">
+        <img id="logo" alt="로고" />
+        <span class="site-title ms-2">CAMPUSEEK</span>
+      </div>
+      <!-- 모바일 메뉴 버튼 -->
+      <button class="menu-toggle d-md-none btn btn-light" id="menuToggle">☰</button>
+      <!-- 내비게이션 메뉴 -->
+      <nav class="header-nav d-none d-md-flex flex-column flex-md-row" id="mainNav">
+        <a href="#map" class="nav-link px-2">지도</a>
+        <a href="#lecture" class="nav-link px-2">강의동</a>
+        <a href="#study" class="nav-link px-2">공부 장소</a>
+        <a href="#food" class="nav-link px-2">식당</a>
+      </nav>
     </div>
   </header>
 
@@ -117,7 +145,307 @@
 
     <section id="study">
       <h2>공부 장소</h2>
-      <p>(공부 공간 정보가 여기에 들어갈 예정입니다)</p>
+      <!-- 공부 장소 그룹별 카드 -->
+      <div class="card-container">
+        <a href="#" class="image-card" data-target="stud_lib" style="background-image: url(stud_img/lib.png);">
+          <div class="image-text">중앙도서관</div>
+        </a>
+        <a href="#" class="image-card" data-target="stud_lec" style="background-image: url(stud_img/lec.png);">
+          <div class="image-text">강의동</div>
+        </a>
+        <a href="#" class="image-card" data-target="stud_esq" style="background-image: url(stud_img/esq.png);">
+          <div class="image-text">이스퀘어</div>
+        </a>
+        <a href="#" class="image-card" data-target="stud_stu" style="background-image: url(stud_img/stu.png);">
+          <div class="image-text">학생회관</div>
+        </a>
+        <a href="#" class="image-card" data-target="stud_dorm" style="background-image: url(stud_img/dorm.png);">
+          <div class="image-text">기숙사</div>
+        </a>
+        <a href="#" class="image-card" data-target="all" style="background-image: url(stud_img/all.jpg);">
+          <div class="image-text">전체 보기</div>
+        </a>
+      </div>
+      <!-- 해시태그 필터 버튼 -->
+      <div class="hashtag-filter" style="margin-top: 1rem; margin-bottom: 1rem;">
+        <button class="tag-btn" data-tag="#열람실">#열람실</button>
+        <button class="tag-btn" data-tag="#휴식">#휴식</button>
+        <button class="tag-btn" data-tag="#PC">#PC</button>
+        <button class="tag-btn" data-tag="#토론">#토론</button>
+      </div>
+      <!-- 공부 장소 설명 카드 -->
+      <div class="study-card-grid">
+        <div class="card mb-3" data-category="stud_lib">
+          <div class="row g-0">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">중앙도서관 1F 창의팩토리</h5>
+                <p class="card-text">집중학습공간, 소파 등 다양한 좌석으로 구성되어있는 북카페 스타일의 학습열람실</p>
+                <p class="card-text"><small class="text-body-secondary">#열람실 #휴식 #PC</small></p>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end">
+              <img src="stud_img/lib_create.png" class="img-fluid rounded-start" style="border-radius: 10px"
+                alt="도서관_창의팩토리">
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" data-category="stud_lib">
+          <div class="row g-0">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">중앙도서관 1F 창의토론실</h5>
+                <p class="card-text">음악이 나오며, 조용한 토론과 협업스터디가 가능한 열람실</p>
+                <p class="card-text"><small class="text-body-secondary">#토론 #휴식 #PC</small></p>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end">
+              <img src="stud_img/lib_discuss.png" class="img-fluid rounded-start" style="border-radius: 10px"
+                alt="도서관_창의토론실">
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" data-category="stud_lib">
+          <div class="row g-0">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">중앙도서관 3F 제1열람실</h5>
+                <p class="card-text">스터디카페 컨셉의 오픈형 열람실</p>
+                <p class="card-text"><small class="text-body-secondary">#열람실</small></p>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end">
+              <img src="stud_img/lib_first.png" class="img-fluid rounded-start" style="border-radius: 10px"
+                alt="도서관_제1열람실">
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" data-category="stud_lib">
+          <div class="row g-0">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">중앙도서관 3F 제2열람실</h5>
+                <p class="card-text">자판기와 복합기가 있는 편의시설이 있으며, 음악이 흐르는 휴게열람실</p>
+                <p class="card-text"><small class="text-body-secondary">#열람실 #휴식</small></p>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end">
+              <img src="stud_img/lib_second.png" class="img-fluid rounded-start" style="border-radius: 10px"
+                alt="도서관_제2열람실">
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" data-category="stud_lib">
+          <div class="row g-0">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">중앙도서관 4F 제3열람실</h5>
+                <p class="card-text">키보드와 마우스 소음 없이 오로지 공부에만 집중할 수 있는 QUIET 열람실</p>
+                <p class="card-text"><small class="text-body-secondary">#열람실</small></p>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end">
+              <img src="stud_img/lib_third.png" class="img-fluid rounded-start" style="border-radius: 10px"
+                alt="도서관_제3열람실">
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" data-category="stud_lec">
+          <div class="row g-0">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">1강 교육관 1F 글로벌라운지 (9:00~15:00)</h5>
+                <p class="card-text">세븐일레븐 옆의 쾌적하고 편안한 휴식을 위한 공간</p>
+                <p class="card-text"><small class="text-body-secondary">#휴식</small></p>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end">
+              <img src="stud_img/lec1_study.png" class="img-fluid rounded-start" style="border-radius: 10px"
+                alt="1강교육관_글로벌라운지">
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" data-category="stud_lec">
+          <div class="row g-0">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">2강 1F K마루 (8:00~22:00)</h5>
+                <p class="card-text">학습 공간, 회의실, 휴식공간, PC공간으로 구성</p>
+                <p class="card-text"><small class="text-body-secondary">#토론 #휴식 #PC</small></p>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end">
+              <img src="stud_img/lec2_study.png" class="img-fluid rounded-start" style="border-radius: 10px"
+                alt="2강_K마루">
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" data-category="stud_lec">
+          <div class="row g-0">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">4강 B1 로비</h5>
+                <p class="card-text">원형 책상으로 공부 및 간단한 회의가 가능한 공간</p>
+                <p class="card-text"><small class="text-body-secondary">#토론</small></p>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end">
+              <img src="stud_img/lec4_study.jpg" class="img-fluid rounded-start" style="border-radius: 10px"
+                alt="4강_B1_로비">
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" data-category="stud_lec">
+          <div class="row g-0">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">6강 1F 로비</h5>
+                <p class="card-text">PC 및 전자기기를 사용가능한 학습공간</p>
+                <p class="card-text"><small class="text-body-secondary">#PC</small></p>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end">
+              <img src="stud_img/lec6_study.jpg" class="img-fluid rounded-start" style="border-radius: 10px"
+                alt="6강_1층_로비">
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" data-category="stud_lec">
+          <div class="row g-0">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">7강 4F 로비</h5>
+                <p class="card-text">칸막이 책상으로 도서관 열람실을 재현한 공간</p>
+                <p class="card-text"><small class="text-body-secondary">#열람실</small></p>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end">
+              <img src="stud_img/lec7_study1.png" class="img-fluid rounded-start" style="border-radius: 10px"
+                alt="7강_4F_로비">
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" data-category="stud_lec">
+          <div class="row g-0">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">7강 5F 로비</h5>
+                <p class="card-text">원형 칸막이 책상으로 넓은 공부 공간을 제공</p>
+                <p class="card-text"><small class="text-body-secondary">#열람실</small></p>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end">
+              <img src="stud_img/lec7_study2.jpg" class="img-fluid rounded-start" style="border-radius: 10px"
+                alt="7강_5F_로비">
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" data-category="stud_lec">
+          <div class="row g-0">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">2공 4,5F 중앙</h5>
+                <p class="card-text">공부 및 간단한 회의가 가능한 공간</p>
+                <p class="card-text"><small class="text-body-secondary">#휴식</small></p>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end">
+              <img src="stud_img/lec10_study.jpg" class="img-fluid rounded-start" style="border-radius: 10px"
+                alt="2공_4,5F_중앙">
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" data-category="stud_lec">
+          <div class="row g-0">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">종강 4F 휴게실</h5>
+                <p class="card-text">휴식 및 개인 공부가 가능한 공간</p>
+                <p class="card-text"><small class="text-body-secondary">#휴식</small></p>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end">
+              <img src="stud_img/lec11_study.png" class="img-fluid rounded-start" style="border-radius: 10px"
+                alt="종강_4F_휴게실">
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" data-category="stud_esq">
+          <div class="row g-0">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">이스퀘어 2F 로비 (09:00~18:00)</h5>
+                <p class="card-text">자유롭게 앉아서 개인공부가 가능한 공간</p>
+                <p class="card-text"><small class="text-body-secondary">#휴식</small></p>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end">
+              <img src="stud_img/esq_2f.png" class="img-fluid rounded-start" style="border-radius: 10px"
+                alt="이스퀘어_2F_로비">
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" data-category="stud_esq">
+          <div class="row g-0">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">이스퀘어 3F 스터디룸 (09:00~21:00)</h5>
+                <p class="card-text">3인~6인으로 예약신청 후 사용가능한 그룹 스터디 공간</p>
+                <p class="card-text"><small class="text-body-secondary">#토론</small></p>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end">
+              <img src="stud_img/esq_3f.png" class="img-fluid rounded-start" style="border-radius: 10px"
+                alt="이스퀘어_3F_스터디룸">
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" data-category="stud_stu">
+          <div class="row g-0">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">학생회관 1F K-아고라 (7:00~22:00)</h5>
+                <p class="card-text">학습 공간, 회의실, 휴식공간, PC공간으로 구성</p>
+                <p class="card-text"><small class="text-body-secondary">#열람실 #토론 #PC</small></p>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end">
+              <img src="stud_img/stu_study.png" class="img-fluid rounded-start" style="border-radius: 10px"
+                alt="학생회관_1F_K-아고라">
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" data-category="stud_dorm">
+          <div class="row g-0">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">기숙사 1F 드림라운지</h5>
+                <p class="card-text">토론 및 휴식이 가능한 공간</p>
+                <p class="card-text"><small class="text-body-secondary">#토론</small></p>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end">
+              <img src="stud_img/dorm_study1.png" class="img-fluid rounded-start" style="border-radius: 10px"
+                alt="기숙사_1F_드림라운지">
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" data-category="stud_dorm">
+          <div class="row g-0">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">기숙사 1F 드림스터디</h5>
+                <p class="card-text">칸막이 책상으로 도서관 열람실을 재현한 공간</p>
+                <p class="card-text"><small class="text-body-secondary">#열람실</small></p>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end">
+              <img src="stud_img/dorm_study2.png" class="img-fluid rounded-start" style="border-radius: 10px"
+                alt="기숙사_1F_드림스터디">
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="food">
@@ -185,7 +513,21 @@
 
       </div>
     </section>
+    <footer class="site-footer">
+      <hr />
+      <div class="footer-links">
+        <a href="https://www.kyonggi.ac.kr/">KGU Site</a>
+        <span>|</span>
+        <a href="https://github.com/Kyonggi-WebP/capuseek">Github</a>
+      </div>
+      <div class="footer-info">
+        <p>저자 : 박성원, 변상준, 이찬혁</p>
+        <p>소속 : 경기대학교 소프트웨어경영대학 AI컴퓨터공학부</p>
+        <p>Copyright 2025. Campuseek Co. All Rights Reserved.</p>
+      </div>
+    </footer>
 
   </main>
 </body>
+
 </html>
