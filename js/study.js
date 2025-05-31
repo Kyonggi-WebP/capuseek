@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     // 공부장소 필터링
     const filterButtons = document.querySelectorAll(".image-card");
-    const allCards = document.querySelectorAll(".card.mb-3");
+    const allCards = document.querySelectorAll("#study .card.mb-3");
     const tagButtons = document.querySelectorAll(".tag-btn");
 
 
