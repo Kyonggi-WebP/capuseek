@@ -65,7 +65,9 @@
     /* ✅ 가운데 정렬 */
     overflow: hidden;
   }
-
+  .heightauto {
+    height: auto !important;
+  }
   .card.mb-3 .row {
     flex-direction: column;
     /* ✅ 수직 배치 (텍스트 위, 이미지 아래 또는 반대) */
@@ -145,7 +147,7 @@
 
   /* 이미지 자체 설정 */
   .responsive-image {
-    display: none;
+    display: block;
   }
 
   /* 목록 글자 스타일 */
