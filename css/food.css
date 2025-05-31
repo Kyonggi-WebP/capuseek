@@ -84,35 +84,35 @@ section#food .card[hidden] {
     }
 }
 @media screen and (max-width: 767px) {
-  .food-card-grid img {
+  section#food .food-card-grid img {
     width: 100%;
     height: auto;
     object-fit: cover;
     border-radius: 10px;
   }
 
-  .food-card-grid .card.mb-3 {
+  section#food .food-card-grid .card.mb-3 {
     width: 100%;
     height: auto;
   }
 
-  .food-card-grid .row {
+  section#food .food-card-grid .row {
     flex-direction: column;
   }
 
-  .food-card-grid .card-body {
+  section#food .food-card-grid .card-body {
     padding: 8px;
   }
 
-  .food-card-grid .card-title {
+  section#food .food-card-grid .card-title {
     font-size: 14px;
   }
 
-  .food-card-grid .card-text {
+  section#food .food-card-grid .card-text {
     font-size: 12px;
   }
 
-  .food-card-grid {
+  section#food .food-card-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
@@ -120,7 +120,7 @@ section#food .card[hidden] {
   }
 
   /* 이미지가 카드 안에 제대로 들어오도록 조정 */
-  .img-wrapper {
+  section#food .img-wrapper {
     max-width: 100%;
     overflow: hidden;
     display: flex;
@@ -128,7 +128,7 @@ section#food .card[hidden] {
     justify-content: center;
   }
 
-  .responsive-image {
+  section#food .responsive-image {
     max-width: 100%;
     height: auto;
     object-fit: cover;
@@ -137,14 +137,14 @@ section#food .card[hidden] {
 
 
   /* 카드 내용 영역 */
-  .responsive-body {
+  section#food .responsive-body {
     height: auto !important;
     padding: 10px;
     overflow: visible;
   }
 
   /* 이미지 wrapper 설정 */
-  .responsive-image-wrapper {
+  section#food .responsive-image-wrapper {
     display: flex;
     justify-content: center !important;
     align-items: center;
@@ -156,7 +156,7 @@ section#food .card[hidden] {
   }
 
   /* 이미지 자체 설정 */
-  .responsive-image {
+  section#food .responsive-image {
     display: inline-block;
     width: 100%;
     height: 100%;
@@ -165,7 +165,7 @@ section#food .card[hidden] {
   }
 
   /* 목록 글자 스타일 */
-  .responsive-list .list-group-item {
+  section#food .responsive-list .list-group-item {
     word-break: keep-all;
     white-space: normal;
     font-size: 11px;
@@ -174,7 +174,7 @@ section#food .card[hidden] {
 }
 
 @media screen and (max-width: 550px) {
-  .food-card-grid {
+  section#food .food-card-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
