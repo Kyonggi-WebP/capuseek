@@ -1,15 +1,13 @@
-
 .card-container {
   display: flex;
   background-color: #c9c9c9;
-
   gap: 20px;
   padding: 40px 20px;
-  
   overflow-x: auto;
   margin: 10px 0;
+  border-radius: 12px;
+  }
 
-}
 .image-card {
   position: relative;
   width: 200px;
@@ -24,6 +22,7 @@
 
 .image-card:hover {
   transform: scale(1.05);
+
   .image-text {
     text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
   }
@@ -55,48 +54,95 @@
   border-width: 3px;
 }
 
+.fade-in-up {
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.tag-btn {
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  transition: all 0.2s ease;
+}
+
+.tag-btn:hover {
+  background-color: #e6e6e6;
+  border-color: #999;
+}
+
+.card[hidden] {
+  display: none !important;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media screen and (max-width: 767px) {
+  .food-card-grid img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .food-card-grid .card.mb-3 {
+    width: 100%;
+    height: auto;
+  }
+
+  .food-card-grid .row {
+    flex-direction: column;
+  }
+
+  .food-card-grid .card-body {
+    padding: 8px;
+  }
+
+  .food-card-grid .card-title {
+    font-size: 14px;
+  }
+
+  .food-card-grid .card-text {
+    font-size: 12px;
+  }
   .card.mb-3 {
-    width: 320px;
-    /* ✅ 고정 가로 크기 */
-    height: 300px;
-    /* ✅ 고정 세로 크기 */
-    margin: 0 auto;
-    /* ✅ 가운데 정렬 */
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
-  .card.mb-3.heightauto {
-    
-    height: auto !important;
-  }
+
   .card.mb-3 .row {
     flex-direction: column;
-    /* ✅ 수직 배치 (텍스트 위, 이미지 아래 또는 반대) */
+    display: contents;
   }
 
   .card.mb-3 .col-md-8,
   .card.mb-3 .col-md-4 {
-    flex: 0 0 auto;
     max-width: 100%;
+    flex: 0 0 auto;
   }
 
   .card.mb-3 img {
     width: 100%;
-    height: 200px;
-    /* ✅ 이미지 고정 높이 */
+    height: 120px;
     object-fit: cover;
-    border-radius: 10px 10px 0 0;
+    border-radius: 0 0 10px 10px;
+    margin-top: auto;
   }
 
   .card.mb-3 .card-body {
-    height: 100px;
-    /* ✅ 텍스트 영역 고정 높이 */
     padding: 10px;
-    overflow: hidden;
   }
 
   .card.mb-3 .card-title {
-    font-size: 20px;
+    font-size: 16px;
     margin-bottom: 6px;
   }
 
@@ -108,10 +154,13 @@
   .card.mb-3 .card-text small {
     font-size: 11px;
   }
-  .row.g-0.flex-column.flex-md-row {
-    flex-direction: column !important;
-  }
 
+  .food-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 10px;
+  }
   .img-wrapper {
     width: 100%;
     justify-content: center !important;
@@ -167,4 +216,14 @@
   }
 
 }
+
+@media screen and (max-width: 550px) {
+  .food-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+  }
+}
+
 
