@@ -1,7 +1,4 @@
-function loadImages() {
-    const baseURL = "https://raw.githubusercontent.com/Kyonggi-WebP/capuseek/img/";
-
-    const imageList = [
+const imageList = [
         { id: "logo", file: "LogoIcon.png" },
         { id: "campus-map", file: "campus_map.jpg"},
         { id: "JinRi", file: "B1-JinRi.jpg" },
@@ -43,6 +40,9 @@ function loadImages() {
         { id: "esquare", file: "esquare.png" }
     ];
 
+function loadImages() {
+    const baseURL = "https://raw.githubusercontent.com/Kyonggi-WebP/capuseek/img/";
+
     imageList.forEach(img => {
         const element = document.getElementById(img.id);
         if (element) {
@@ -50,3 +50,28 @@ function loadImages() {
         }
     });
 }
+
+function loadImagesIn(container) {
+    const baseURL = "https://raw.githubusercontent.com/Kyonggi-WebP/capuseek/img/";
+
+    imageList.forEach(img => {
+        const element = container.querySelector(`img#${img.id}`);
+        if (element) {
+            element.src = baseURL + img.file;
+        }
+    });
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const collapses = document.querySelectorAll('.accordion-collapse');
+
+  collapses.forEach(collapse => {
+    collapse.addEventListener('shown.bs.collapse', () => {
+      // DOM 렌더링이 끝난 다음 이미지 로드 실행 (약간의 지연)
+      setTimeout(() => {
+        loadImages();
+      }, 10);  // 10ms 정도면 충분
+    });
+  });
+});

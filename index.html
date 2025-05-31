@@ -44,8 +44,8 @@
   <!-- Custom JS -->
   <script src="js/buildingList.js"></script>
   <script src="js/building-loader.js"></script>
+  <script src="js/map.js"></script>
   <script src="js/image-loader.js"></script>
-  <script src="js/restaurant-js.js"></script>
   <script src="js/study.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -135,12 +135,115 @@
           </ul>
         </div>
       </div>
+
+      <div id="map-building-container" class="map-building-container mt-4">
+        <div id="map-building-info">
+          <p class="text-center text-muted" id="map-placeholder">원하는 장소 아이콘을 선택해보세요.</p>
+        </div>
+      </div>
+
     </section>
 
-    <section id="lecture" class="container">
-      <h2>강의동</h2>
-      <div class="row gy-4" id="lecture-list">
-
+    <section id="lecture">
+      <h2>둘러보기</h2>
+      <div class="accordion container my-5" id="lectureAccordion">
+    
+        <!-- 전체보기 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingAll">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAll"
+              aria-expanded="true" aria-controls="collapseAll">
+              전체 시설
+            </button>
+          </h2>
+          <div id="collapseAll" class="accordion-collapse collapse" aria-labelledby="headingAll"
+            data-bs-parent="#lectureAccordion">
+            <div class="accordion-body">
+              <div class="row gy-4" id="lecture-list-all"></div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- 강의동 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingLecture">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseLecture" aria-expanded="false" aria-controls="collapseLecture">
+              강의동
+            </button>
+          </h2>
+          <div id="collapseLecture" class="accordion-collapse collapse" aria-labelledby="headingLecture"
+            data-bs-parent="#lectureAccordion">
+            <div class="accordion-body">
+              <div class="row gy-4" id="lecture-list-강의동"></div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- 실습동 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingPractice">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapsePractice" aria-expanded="false" aria-controls="collapsePractice">
+              실습동
+            </button>
+          </h2>
+          <div id="collapsePractice" class="accordion-collapse collapse" aria-labelledby="headingPractice"
+            data-bs-parent="#lectureAccordion">
+            <div class="accordion-body">
+              <div class="row gy-4" id="lecture-list-실습동"></div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- 식당 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFood">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFood" aria-expanded="false" aria-controls="collapseFood">
+              식당
+            </button>
+          </h2>
+          <div id="collapseFood" class="accordion-collapse collapse" aria-labelledby="headingFood"
+            data-bs-parent="#lectureAccordion">
+            <div class="accordion-body">
+              <div class="row gy-4" id="lecture-list-식당"></div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- 편의시설 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFacility">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFacility" aria-expanded="false" aria-controls="collapseFacility">
+              편의시설
+            </button>
+          </h2>
+          <div id="collapseFacility" class="accordion-collapse collapse" aria-labelledby="headingFacility"
+            data-bs-parent="#lectureAccordion">
+            <div class="accordion-body">
+              <div class="row gy-4" id="lecture-list-편의시설"></div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- 기타 교내시설 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOther">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseOther" aria-expanded="false" aria-controls="collapseOther">
+              그 외 교내시설
+            </button>
+          </h2>
+          <div id="collapseOther" class="accordion-collapse collapse" aria-labelledby="headingOther"
+            data-bs-parent="#lectureAccordion">
+            <div class="accordion-body">
+              <div class="row gy-4" id="lecture-list-기타"></div>
+            </div>
+          </div>
+        </div>
+    
       </div>
     </section>
 
