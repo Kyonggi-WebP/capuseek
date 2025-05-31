@@ -7,7 +7,7 @@ function renderBuildings(list, containerId = "lecture-list") {
     const tagsHTML = building.tags.map(tag => `<span class="badge bg-secondary">${tag}</span>`).join(" ");
 
     buildingElement.innerHTML += `
-      <div class="col-md-3 col-lg-3">
+      <div class="col-6 col-md-3 col-lg-3">
         <div class="card lecture-card h-100">
           <img id="${building.id}" alt="${building.name}" class="card-img-top">
           <div class="card-body">
