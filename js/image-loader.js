@@ -34,6 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
         { id: "Gisooksa", file: "B30-Gisooksa.jpg" },
         { id: "Hanoori", file: "B31-Hanoori.jpg" },
         { id: "seminar", file: "B34-seminar.jpg" },
+        { id: "kyungsyul", file: "kyungsyul.png" },
+        { id: "gamsung", file: "gamsung.jpg" },
+        { id: "esquare", file: "esquare.png" }
     ];
 
     imageList.forEach(img => {
