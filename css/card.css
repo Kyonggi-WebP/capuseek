@@ -66,6 +66,7 @@
     overflow: hidden;
   }
   .card.mb-3.heightauto {
+    
     height: auto !important;
   }
   .card.mb-3 .row {
