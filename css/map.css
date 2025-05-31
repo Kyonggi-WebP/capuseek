@@ -10,12 +10,13 @@
         flex-direction: row;
         align-items: flex-start;
       }
+
       #map .map-image,
       #map .map-location-list {
         flex: 1;
       }
     }
-    
+
     #map .map-image img {
       width: 100%;
       max-width: 800px;
@@ -52,6 +53,59 @@
       white-space: nowrap;
     }
 
+    #map .location-list li:active {
+      background-color: #3498db;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .map-building-container {
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      padding: 8px 12px;
+      width: fit-content;
+      margin: 0 auto;
+      transition: all 1s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+    }
+
+    #map-placeholder {
+      padding-top: 10px;
+      font-size: 20px;
+      color: #6c757d;
+      text-align: center;
+      white-space: nowrap;
+      line-height: 1.5;
+    }
+
+    #map-building-info .map-card {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    #map-building-info .map-img-right {
+      width: 300px;
+      height: auto;
+      max-height: 200px;
+      object-fit: cover;
+      align-self: center;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 0.375rem;
+      border-bottom-right-radius: 0.375rem;
+    }
+
+    #map-building-info .card-body {
+      flex: 1;
+      padding: 1rem;
+    }
+
     @media (max-width: 768px) {
       #map .location-list {
         max-height: 200px;
@@ -67,9 +121,41 @@
         padding: 4px 6px;
         font-size: 11px;
       }
-    }
 
     #map .index {
       font-weight: bold;
       margin-right: 8px;
     }
+
+  @media (max-width: 768px) {
+  #map-building-info .map-card {
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  #map-building-info .map-img-right {
+    width: 100%;
+    max-height: 180px;
+    border-radius: 0 0 0.375rem 0.375rem;
+  }
+
+  #map-building-info .card-body {
+    padding: 0.75rem;
+  }
+
+  #map-building-info .card-title {
+    font-size: 1.1rem;
+  }
+
+  #map-building-info .card-text {
+    font-size: 0.9rem;
+  }
+
+  #map-building-info .tags {
+    font-size: 0.8rem;
+  }
+}
+
+}
