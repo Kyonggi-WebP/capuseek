@@ -6,28 +6,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CAMPUSEEK</title>
   <style>
-    body {
-      margin: 0;
+    html, body {
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
       font-family: Arial, sans-serif;
     }
 
     header {
-      position: fixed;
-      top: 0;
-      width: 100%;
       height: 70px;
       background-color: #787878;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       z-index: 1000;
+      flex-shrink: 0;
     }
 
     main {
-      padding: 80px 20px 20px;
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
     }
 
     section {
       margin-bottom: 80px;
       scroll-margin-top: 80px;
+    }
+
+    footer {
+      flex-shrink: 0;
     }
   </style>
   <!-- Bootstrap CSS -->
@@ -147,12 +154,12 @@
     <section id="lecture">
       <h2>둘러보기</h2>
       <div class="accordion container my-5" id="lectureAccordion">
-    
+
         <!-- 전체보기 -->
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingAll">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAll"
-              aria-expanded="true" aria-controls="collapseAll">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseAll" aria-expanded="true" aria-controls="collapseAll">
               전체 시설
             </button>
           </h2>
@@ -163,7 +170,7 @@
             </div>
           </div>
         </div>
-    
+
         <!-- 강의동 -->
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingLecture">
@@ -179,7 +186,7 @@
             </div>
           </div>
         </div>
-    
+
         <!-- 실습동 -->
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingPractice">
@@ -195,7 +202,7 @@
             </div>
           </div>
         </div>
-    
+
         <!-- 식당 -->
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingFood">
@@ -211,7 +218,7 @@
             </div>
           </div>
         </div>
-    
+
         <!-- 편의시설 -->
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingFacility">
@@ -227,7 +234,7 @@
             </div>
           </div>
         </div>
-    
+
         <!-- 기타 교내시설 -->
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOther">
@@ -250,22 +257,28 @@
       <h2>공부 장소</h2>
       <!-- 공부 장소 그룹별 카드 -->
       <div class="card-container">
-        <a href="#" class="image-card" data-target="stud_lib" style="background-image: url(https://raw.githubusercontent.com/Kyonggi-WebP/capuseek/img/lib.png);">
+        <a href="#" class="image-card" data-target="stud_lib"
+          style="background-image: url(https://raw.githubusercontent.com/Kyonggi-WebP/capuseek/img/lib.png);">
           <div class="image-text">중앙도서관</div>
         </a>
-        <a href="#" class="image-card" data-target="stud_lec" style="background-image: url(https://raw.githubusercontent.com/Kyonggi-WebP/capuseek/img/lec.png);">
+        <a href="#" class="image-card" data-target="stud_lec"
+          style="background-image: url(https://raw.githubusercontent.com/Kyonggi-WebP/capuseek/img/lec.png);">
           <div class="image-text">강의동</div>
         </a>
-        <a href="#" class="image-card" data-target="stud_esq" style="background-image: url(https://raw.githubusercontent.com/Kyonggi-WebP/capuseek/img/esq.png);">
+        <a href="#" class="image-card" data-target="stud_esq"
+          style="background-image: url(https://raw.githubusercontent.com/Kyonggi-WebP/capuseek/img/esq.png);">
           <div class="image-text">이스퀘어</div>
         </a>
-        <a href="#" class="image-card" data-target="stud_stu" style="background-image: url(https://raw.githubusercontent.com/Kyonggi-WebP/capuseek/img/stu.png);">
+        <a href="#" class="image-card" data-target="stud_stu"
+          style="background-image: url(https://raw.githubusercontent.com/Kyonggi-WebP/capuseek/img/stu.png);">
           <div class="image-text">학생회관</div>
         </a>
-        <a href="#" class="image-card" data-target="stud_dorm" style="background-image: url(https://raw.githubusercontent.com/Kyonggi-WebP/capuseek/img/dorm.png);">
+        <a href="#" class="image-card" data-target="stud_dorm"
+          style="background-image: url(https://raw.githubusercontent.com/Kyonggi-WebP/capuseek/img/dorm.png);">
           <div class="image-text">기숙사</div>
         </a>
-        <a href="#" class="image-card" data-target="all" style="background-image: url(https://raw.githubusercontent.com/Kyonggi-WebP/capuseek/img/all.jpg);">
+        <a href="#" class="image-card" data-target="all"
+          style="background-image: url(https://raw.githubusercontent.com/Kyonggi-WebP/capuseek/img/all.jpg);">
           <div class="image-text">전체 보기</div>
         </a>
       </div>
@@ -288,8 +301,7 @@
               </div>
             </div>
             <div class="col-md-4 d-flex justify-content-end">
-              <img id="lib_create" class="img-fluid rounded-start" style="border-radius: 10px"
-                alt="도서관_창의팩토리">
+              <img id="lib_create" class="img-fluid rounded-start" style="border-radius: 10px" alt="도서관_창의팩토리">
             </div>
           </div>
         </div>
@@ -303,8 +315,7 @@
               </div>
             </div>
             <div class="col-md-4 d-flex justify-content-end">
-              <img id="lib_discuss" class="img-fluid rounded-start" style="border-radius: 10px"
-                alt="도서관_창의토론실">
+              <img id="lib_discuss" class="img-fluid rounded-start" style="border-radius: 10px" alt="도서관_창의토론실">
             </div>
           </div>
         </div>
@@ -318,8 +329,7 @@
               </div>
             </div>
             <div class="col-md-4 d-flex justify-content-end">
-              <img id="lib_first" class="img-fluid rounded-start" style="border-radius: 10px"
-                alt="도서관_제1열람실">
+              <img id="lib_first" class="img-fluid rounded-start" style="border-radius: 10px" alt="도서관_제1열람실">
             </div>
           </div>
         </div>
@@ -333,8 +343,7 @@
               </div>
             </div>
             <div class="col-md-4 d-flex justify-content-end">
-              <img id="lib_second" class="img-fluid rounded-start" style="border-radius: 10px"
-                alt="도서관_제2열람실">
+              <img id="lib_second" class="img-fluid rounded-start" style="border-radius: 10px" alt="도서관_제2열람실">
             </div>
           </div>
         </div>
@@ -348,8 +357,7 @@
               </div>
             </div>
             <div class="col-md-4 d-flex justify-content-end">
-              <img id="lib_third" class="img-fluid rounded-start" style="border-radius: 10px"
-                alt="도서관_제3열람실">
+              <img id="lib_third" class="img-fluid rounded-start" style="border-radius: 10px" alt="도서관_제3열람실">
             </div>
           </div>
         </div>
@@ -363,8 +371,7 @@
               </div>
             </div>
             <div class="col-md-4 d-flex justify-content-end">
-              <img id="lec1_study" class="img-fluid rounded-start" style="border-radius: 10px"
-                alt="1강교육관_글로벌라운지">
+              <img id="lec1_study" class="img-fluid rounded-start" style="border-radius: 10px" alt="1강교육관_글로벌라운지">
             </div>
           </div>
         </div>
@@ -378,8 +385,7 @@
               </div>
             </div>
             <div class="col-md-4 d-flex justify-content-end">
-              <img id="lec2_study" class="img-fluid rounded-start" style="border-radius: 10px"
-                alt="2강_K마루">
+              <img id="lec2_study" class="img-fluid rounded-start" style="border-radius: 10px" alt="2강_K마루">
             </div>
           </div>
         </div>
@@ -393,8 +399,7 @@
               </div>
             </div>
             <div class="col-md-4 d-flex justify-content-end">
-              <img id="lec4_study" class="img-fluid rounded-start" style="border-radius: 10px"
-                alt="4강_B1_로비">
+              <img id="lec4_study" class="img-fluid rounded-start" style="border-radius: 10px" alt="4강_B1_로비">
             </div>
           </div>
         </div>
@@ -408,8 +413,7 @@
               </div>
             </div>
             <div class="col-md-4 d-flex justify-content-end">
-              <img id="lec6_study" class="img-fluid rounded-start" style="border-radius: 10px"
-                alt="6강_1층_로비">
+              <img id="lec6_study" class="img-fluid rounded-start" style="border-radius: 10px" alt="6강_1층_로비">
             </div>
           </div>
         </div>
@@ -423,8 +427,7 @@
               </div>
             </div>
             <div class="col-md-4 d-flex justify-content-end">
-              <img id="lec7_study1" class="img-fluid rounded-start" style="border-radius: 10px"
-                alt="7강_4F_로비">
+              <img id="lec7_study1" class="img-fluid rounded-start" style="border-radius: 10px" alt="7강_4F_로비">
             </div>
           </div>
         </div>
@@ -438,8 +441,7 @@
               </div>
             </div>
             <div class="col-md-4 d-flex justify-content-end">
-              <img id="lec7_study2" class="img-fluid rounded-start" style="border-radius: 10px"
-                alt="7강_5F_로비">
+              <img id="lec7_study2" class="img-fluid rounded-start" style="border-radius: 10px" alt="7강_5F_로비">
             </div>
           </div>
         </div>
@@ -453,8 +455,7 @@
               </div>
             </div>
             <div class="col-md-4 d-flex justify-content-end">
-              <img id="lec10_study" class="img-fluid rounded-start" style="border-radius: 10px"
-                alt="2공_4,5F_중앙">
+              <img id="lec10_study" class="img-fluid rounded-start" style="border-radius: 10px" alt="2공_4,5F_중앙">
             </div>
           </div>
         </div>
@@ -468,8 +469,7 @@
               </div>
             </div>
             <div class="col-md-4 d-flex justify-content-end">
-              <img id="lec11_study" class="img-fluid rounded-start" style="border-radius: 10px"
-                alt="종강_4F_휴게실">
+              <img id="lec11_study" class="img-fluid rounded-start" style="border-radius: 10px" alt="종강_4F_휴게실">
             </div>
           </div>
         </div>
@@ -483,8 +483,7 @@
               </div>
             </div>
             <div class="col-md-4 d-flex justify-content-end">
-              <img id="esq_2f" class="img-fluid rounded-start" style="border-radius: 10px"
-                alt="이스퀘어_2F_로비">
+              <img id="esq_2f" class="img-fluid rounded-start" style="border-radius: 10px" alt="이스퀘어_2F_로비">
             </div>
           </div>
         </div>
@@ -498,8 +497,7 @@
               </div>
             </div>
             <div class="col-md-4 d-flex justify-content-end">
-              <img id="esq_3f" class="img-fluid rounded-start" style="border-radius: 10px"
-                alt="이스퀘어_3F_스터디룸">
+              <img id="esq_3f" class="img-fluid rounded-start" style="border-radius: 10px" alt="이스퀘어_3F_스터디룸">
             </div>
           </div>
         </div>
@@ -513,8 +511,7 @@
               </div>
             </div>
             <div class="col-md-4 d-flex justify-content-end">
-              <img id="stu_study" class="img-fluid rounded-start" style="border-radius: 10px"
-                alt="학생회관_1F_K-아고라">
+              <img id="stu_study" class="img-fluid rounded-start" style="border-radius: 10px" alt="학생회관_1F_K-아고라">
             </div>
           </div>
         </div>
@@ -528,8 +525,7 @@
               </div>
             </div>
             <div class="col-md-4 d-flex justify-content-end">
-              <img id="dorm_study1" class="img-fluid rounded-start" style="border-radius: 10px"
-                alt="기숙사_1F_드림라운지">
+              <img id="dorm_study1" class="img-fluid rounded-start" style="border-radius: 10px" alt="기숙사_1F_드림라운지">
             </div>
           </div>
         </div>
@@ -543,8 +539,7 @@
               </div>
             </div>
             <div class="col-md-4 d-flex justify-content-end">
-              <img id="dorm_study2" class="img-fluid rounded-start" style="border-radius: 10px"
-                alt="기숙사_1F_드림스터디">
+              <img id="dorm_study2" class="img-fluid rounded-start" style="border-radius: 10px" alt="기숙사_1F_드림스터디">
             </div>
           </div>
         </div>
@@ -601,7 +596,8 @@
               <div class="card-body responsive-body">
                 <h5 class="card-title">감성코어</h5>
                 <ul class="list-group list-group-flush responsive-list">
-                  <li class="list-group-item"><strong>운영시간:</strong> 주말 및 공휴일 휴무 10:30~16:00 (한식 11:00~14:30, 돈까스/라면 10:30~16:00)</li>
+                  <li class="list-group-item"><strong>운영시간:</strong> 주말 및 공휴일 휴무 10:30~16:00 (한식 11:00~14:30, 돈까스/라면
+                    10:30~16:00)</li>
                   <li class="list-group-item"><strong>위치:</strong> 제3복지관(감성코어) 1층, 중앙도서관 뒷편</li>
                   <li class="list-group-item"><strong>특이사항:</strong> 한식, 비교과활동으로 식권 받을 수 있음</li>
                 </ul>
@@ -616,20 +612,20 @@
 
       </div>
     </section>
-    <footer class="site-footer">
-      <hr />
-      <div class="footer-links">
-        <a href="https://www.kyonggi.ac.kr/">KGU Site</a>
-        <span>|</span>
-        <a href="https://github.com/Kyonggi-WebP/">Github</a>
-      </div>
-      <div class="footer-info">
-        <p>저자 : 박성원, 변상준, 이찬혁</p>
-        <p>소속 : 경기대학교 소프트웨어경영대학 컴퓨터공학부, AI컴퓨터공학부</p>
-      </div>
-    </footer>
-
   </main>
-</body>
 
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="https://www.kyonggi.ac.kr/">KGU Site</a>
+      <span>|</span>
+      <a href="https://github.com/Kyonggi-WebP/">Github</a>
+    </div>
+    <div class="footer-info">
+      <span>저자 : 박성원, 변상준, 이찬혁</span>
+      <span> | </span>
+      <span>소속 : 경기대학교 소프트웨어경영대학 컴퓨터공학부, AI컴퓨터공학부</span>
+    </div>
+  </footer>
+
+</body>
 </html>
