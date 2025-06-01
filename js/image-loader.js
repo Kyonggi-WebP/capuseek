@@ -37,7 +37,31 @@ const imageList = [
   { id: "seminar", file: "B34-seminar.jpg" },
   { id: "kyungsyul", file: "kyungsyul.png" },
   { id: "gamsung", file: "gamsung.jpg" },
-  { id: "esquare", file: "esquare.png" }
+  { id: "esquare", file: "esquare.png" },
+  { id: "all", file: "all.jpg" },
+  { id: "dorm_study1", file: "dorm_study1.png" },
+  { id: "dorm_study2", file: "dorm_study2.png" },
+  { id: "dorm", file: "dorm.png" },
+  { id: "esq_2f", file: "esq_2f.png" },
+  { id: "esq_3f", file: "esq_3f.png" },
+  { id: "esq", file: "esq.png" },
+  { id: "lec", file: "lec.png" },
+  { id: "lec1_study", file: "lec1_study.png" },
+  { id: "lec2_study", file: "lec2_study.png" },
+  { id: "lec4_study", file: "lec4_study.jpg" },
+  { id: "lec6_study", file: "lec6_study.jpg" },
+  { id: "lec7_study1", file: "lec7_study1.png" },
+  { id: "lec7_study2", file: "lec7_study2.jpg" },
+  { id: "lec10_study", file: "lec10_study.jpg" },
+  { id: "lec11_study", file: "lec11_study.png" },
+  { id: "lib_create", file: "lib_create.png" },
+  { id: "lib_discuss", file: "lib_discuss.png" },
+  { id: "lib_first", file: "lib_first.png" },
+  { id: "lib_second", file: "lib_second.png" },
+  { id: "lib_third", file: "lib_third.png" },
+  { id: "lib", file: "lib.png" },
+  { id: "stu_study", file: "stu_study.png" },
+  { id: "stu", file: "stu.png" }
 ];
 
 function loadImages() {
